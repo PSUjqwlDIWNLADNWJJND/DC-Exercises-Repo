@@ -1,0 +1,94 @@
+---
+title: "DC Exercises (ch 8)"
+author: "Samuel Quinn"
+date: "October 17, 2023"
+output: 
+  html_notebook:
+    fig_height: 6
+    fig_width: 10
+---
+
+
+
+#8.1
+1. Add a layer of glyphs
+2. Add a layer of glyphs
+3. Construct a graphics frame
+4. Change the scale for the frame
+5. Set an axis label
+6. Divide the frame into facets
+7. Add a layer of glyphs
+8. Change the scale for the frame
+9. Divide the frame into facets
+
+#8.2
+```{r}
+library(mosaicData)
+data(CPS85)
+```
+
+1. ggplot(data = CPS85) +
+  geom_density(aes(x = wage, fill = sex), alpha = 0.4)+
+  facet_grid( ~ married) +
+  xlim(0,30)
+
+2. ggplot(data = CPS85) + 
+  geom_line( aes(x = age, y = wage, color = sex, size = 4)) +
+  facet_grid(married ~ .) + 
+  xlim(25,65) +
+  ylim(0,15)
+  
+3. ggplot(data = CPS85) + 
+  geom_line( aes(x = age, y = wage, color = sex, size = 4)) +
+  facet_grid(~ sector) +
+  xlim(25,65) +
+  ylim(0,15)
+  
+#8.3
+1. ggplot(data = CPS85) + 
+  geom_point( aes(x = age, y = wage)) +
+  xlim(17,65) +
+  ylim(0,45)
+
+2. ggplot(data = CPS85) + 
+  geom_point( aes(x = age, y = wage, shape = sex)) +
+  xlim(17,65) +
+  ylim(0,45)
+  
+3. ggplot(data = CPS85) + 
+  geom_point( aes(x = age, y = wage, shape = sex)) +
+  facet_grid(married ~ .)
+  xlim(17,65) +
+  ylim(0,45)
+  
+4. ggplot(data = CPS85) + 
+  geom_point( aes(x = age, y = wage, shape = married)) +
+  xlim(17,65) +
+  ylim(0,45)
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
